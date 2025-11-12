@@ -1,0 +1,137 @@
+:root{
+  
+  --salmon-100:#ffd6d1;
+  --salmon-200:#ffb2a3;
+
+}
+
+@font-face { font-family: Poppins; src: local("Poppins"); }
+* { box-sizing: border-box; }
+img{
+  width: 500px;
+  height: 550px;
+ 
+}
+body {
+  margin: 0;
+  font-family: Poppins, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  background:  linear-gradient(180deg,var(--salmon-100),var(--salmon-200));
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  color: #2b2b2b;
+}
+main {
+  width: min(1100px, 92vw);
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 25px 60px rgba(17, 24, 39, .15);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+main > section:first-of-type {
+  background: linear-gradient(180deg,#ffb7a3,#ffa6a0 55%,#ffb7a3);
+  padding: 48px 40px;
+  display: grid;
+  place-items: center;
+  position: relative;
+}
+main > section:first-of-type > article {
+  width: min(420px, 90%);
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0,0,0,.15);
+  padding: 24px;
+}
+
+main > section:last-of-type {
+  padding: 32px 36px 28px;
+  display: grid;
+  align-content: start;
+  gap: 18px;
+}
+
+main > section:last-of-type > header {
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 13px; color: #666;
+}
+main > section:last-of-type > header a {
+  color: #ffc7c0; text-decoration: none;
+}
+main > section:last-of-type > header a:hover { text-decoration: underline; }
+
+main > section:last-of-type > h1 {
+  margin: 0; font-size: 28px; letter-spacing: .2px;
+}
+main > section:last-of-type > div {
+  height: 6px; border-radius: 999px; background:
+    radial-gradient(circle at 4% 50%, #ffb1a1 2px, transparent 3px) repeat-x left/18px 6px;
+  opacity: .8;
+}
+
+form { display: grid; gap: 14px; }
+
+form > div:nth-of-type(1),
+form > div:nth-of-type(2) {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+}
+label { display: grid; gap: 6px; font-size: 13px; color: #5b5b5b; }
+input[type="text"], input[type="email"], input[type="password"] {
+  width: 100%; padding: 12px 14px; border: 1.5px solid #e6e6e6; border-radius: 12px;
+  outline: none; font-size: 14px; background: #fafafa;
+  transition: border-color .2s, box-shadow .2s, background .2s;
+}
+input:focus {
+  background: #fff; border-color: #ffb3a4;
+  box-shadow: 0 0 0 4px rgba(255,179,164,.25);
+}
+
+form > p { margin: 6px 0 0; display: flex; gap: 10px; align-items: flex-start; font-size: 13px; color:#616161; }
+form > p input[type="checkbox"] { margin-top: 3px; }
+
+form > div:last-of-type {
+  display: flex; gap: 12px; align-items: center; margin-top: 6px;
+}
+input[type="submit"][name="Registrar"] {
+  border: 0; padding: 12px 18px; border-radius: 12px; cursor: pointer;
+  background: linear-gradient(180deg,#ffc3b3,#fcb7a5);
+  color: #fff; font-weight: 600; box-shadow: 0 8px 18px rgba(255,150,120,.35);
+}
+input[type="submit"][name="Registrar"]:hover { filter: brightness(.98); }
+form > div:last-of-type > a {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 12px 16px; border-radius: 12px; text-decoration: none; font-weight: 600;
+  color: #2f2f2f; background: #fff; border: 1.5px solid #e7e7e7;
+  box-shadow: 0 2px 0 rgba(0,0,0,.02);
+}
+form > div:last-of-type > a:hover { background: #f7f7f7; }
+form > nav { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 6px; }
+form > nav a {
+  display: inline-flex; gap: 10px; align-items: center; justify-content: center;
+  text-decoration: none; color: #2f2f2f; font-weight: 600; font-size: 14px;
+  padding: 12px 14px; border-radius: 12px; background: #fff; border: 1.5px solid #e7e7e7;
+}
+form > nav a:hover { background: #f9f9f9; }
+form > nav a span { font-size: 16px; }
+@media (max-width: 900px) {
+  main { grid-template-columns: 1fr; }
+  main > section:first-of-type { padding: 28px 24px; }
+  form > div:nth-of-type(1),
+  form > div:nth-of-type(2),
+  form > nav { grid-template-columns: 1fr; }
+}
+h3 {
+
+  position: absolute ;
+  top: 170px;    
+  right: 440px; 
+  font-size: 14px;
+  
+}
+
+h3 a{
+margin-top: 100px;
+   text-decoration:none; font-weight:700;
+}

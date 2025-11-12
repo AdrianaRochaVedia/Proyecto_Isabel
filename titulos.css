@@ -1,0 +1,22 @@
+.titulo{
+
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+.titulo{
+   width: 3000%;
+    max-width: 2000px;
+    text-align: center;
+}
+.titulo h1{
+    text-align: center;
+    font-size: 150px;
+    -webkit-background-clip: text;
+    
+    -webkit-text-fill-color:transparent;
+
+    background-image: url(cul1.jpg);
+
+    background-attachment: fixed;
+   
+}

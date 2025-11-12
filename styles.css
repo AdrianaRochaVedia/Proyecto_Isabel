@@ -1,0 +1,127 @@
+:root {
+    --rosa-1: #ff80ab;
+    --rosa-2: #f48fb1;
+    --txt: #222;
+    --blanco: #fff;
+    --sombra: 0 15px 35px rgba(0, 0, 0, 0.15);
+  }
+
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    color: var(--txt);
+    background: #fff7fb;
+    font-size: 18px;
+    line-height: 1.7;
+  }
+
+  .container { width: min(92%, 1150px); margin-inline: auto; }
+  .hero {
+    position: relative;
+    min-height: 85vh;
+    display: grid;
+    place-items: center;
+    background-image: url("h.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    isolation: isolate;
+  }
+  .hero::after{
+    content:""; position:absolute; inset:0;
+    background: linear-gradient(to bottom, rgba(0,0,0,.45), rgba(0,0,0,.35));
+    z-index:1;
+  }
+  .hero-content{
+    position:relative; z-index:2; text-align:center; color:#fff;
+    text-shadow:0 2px 12px rgba(0,0,0,.45);
+    max-width:900px; padding:20px;
+  }
+  .hero h1{ margin:0 0 15px; font-size:clamp(40px,5vw,64px); color: #fadfdf;}
+  .hero p{ margin:0 auto 30px; opacity:.95; }
+  .btn{
+    display:inline-block; background:#fdc9c9;  color:#ffffff;
+    padding:18px 48px; border-radius:999px; font-weight:700; text-decoration:none; font-size:18px;
+    box-shadow:var(--sombra); transition:.25s transform,.25s box-shadow;
+  }
+  .btn:hover{ background:#ffb8b8; transform:translateY(-4px); box-shadow:0 22px 40px rgba(0,0,0,.18),0 8px 20px rgba(0,0,0,.12); }
+
+  section.info{ padding:100px 0; background:#fcd8d8; }
+  .title{
+    color:#ff8791; font-size:clamp(30px,4vw,46px);
+    text-align:center; margin:0 0 25px;
+  }
+  .lead{ text-align:center; max-width:860px; margin:0 auto 60px; opacity:.9; }
+  .cards{ display:grid; grid-template-columns:repeat(3,1fr); gap:32px; }
+  .card{
+    background:#fff; border-radius:24px; box-shadow:var(--sombra);
+    padding:30px; text-align:center; transition:.3s ease transform,.3s ease box-shadow;
+    color:#000000;
+  }
+  .card:hover{ transform:translateY(-6px); box-shadow:0 25px 45px rgba(0,0,0,.2); }
+  .card img{ width:100%; height:220px; object-fit:cover; border-radius:18px; margin-bottom:20px; }
+  .card h3{ color:#f58b8b; margin:0 0 10px; font-size:22px; }
+  .card p{ margin:0; opacity:.95; }
+
+  @media (max-width:900px){ .cards{grid-template-columns:1fr 1fr;} }
+  @media (max-width:600px){ .cards{grid-template-columns:1fr;} }
+
+  .parallax{
+    min-height:65vh; display:grid; place-items:center; text-align:center; color:#fff;
+    padding:70px 20px; background-size:cover; background-position:center; background-attachment:fixed;
+    position:relative; isolation:isolate;
+  }
+  .parallax::after{
+    content:""; position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.45));
+    z-index:-1;
+  }
+  .parallax h2{ margin:0 0 10px; font-size:clamp(32px,4.2vw,48px); }
+  .parallax p{ max-width:860px; margin:0 auto; }
+
+  .galeria-wrap{ padding:110px 0; background:linear-gradient(180deg,#fcd8d8,#ffbcc2); }
+  .galeria-wrap .container{ width: min(96%, 1400px); }
+  .galeria-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:30px; }
+  .item{
+    position:relative; overflow:hidden; border-radius:22px;
+    box-shadow:0 12px 24px rgba(0,0,0,.15);
+    transition:transform .3s ease, box-shadow .3s ease; background:#ddd;
+  }
+  .item img{
+    width:100%; height:380px; object-fit:cover; display:block;
+    transform:scale(1.02); transition:transform .35s ease;
+  }
+  .item:hover{ transform:translateY(-4px); box-shadow:0 22px 40px rgba(0,0,0,.22); }
+  .item:hover img{ transform:scale(1.07); }
+
+  @media (max-width:1000px){
+    .galeria-grid{ grid-template-columns:repeat(2,1fr); }
+    .item img{ height:340px; }
+  }
+  @media (max-width:700px){
+    .galeria-grid{ grid-template-columns:1fr; }
+    .item img{ height:300px; }
+  }
+
+ 
+
+  .reveal {
+
+    view-timeline-name: --reveal;
+    view-timeline-axis: block;
+
+    animation-name: fadeSlide;
+    animation-timeline: --reveal;
+
+    animation-range: entry 0% cover 40%;
+    animation-fill-mode: both;
+  }
+  @keyframes fadeSlide{
+    from { opacity: 0; transform: translateY(28px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .reveal{ animation: none !important; opacity: 1 !important; transform: none !important; }
+  }

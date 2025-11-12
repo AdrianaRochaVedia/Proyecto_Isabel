@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MAPA DE PÉRDIDAS TERRITORIALES DE BOLIVIA</title>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<style>
+:root{
+  --salmon1:#fde2dc; --salmon2:#f8b4a6; --salmon3:#f6a89e; --salmon4:#f28b6b;
+  --card:#fff; --text:#333; --borde:#f5cfd0;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Segoe UI,Arial,sans-serif;color:var(--text);background:linear-gradient(180deg,var(--salmon1) 0%,#fff 100%)}
+.wrap{max-width:980px;margin:0 auto;padding:0 14px}
+
+.header{padding:36px 0;background:linear-gradient(135deg,#ffd7cc,#ffe7e2);border-bottom:6px solid #ffc9bd;box-shadow:0 8px 24px rgba(0,0,0,.08)}
+.title-mask{margin:0;line-height:1.1;font-weight:900;font-size:clamp(30px,6vw,64px);text-align:center;color:transparent;-webkit-text-fill-color:transparent;background-repeat:no-repeat;background-position:center;background-size:cover;-webkit-background-clip:text;background-clip:text}
+.no-img{background-image:linear-gradient(90deg,#f6a89e 0%, #f8b4a6 100%)}
+
+.banner{background:#fff;border:1px solid var(--borde);border-left:4px solid var(--salmon3);padding:10px 12px;border-radius:10px;margin:16px auto;display:flex;gap:10px;align-items:center;justify-content:space-between;max-width:980px;flex-wrap:wrap}
+.banner button{background:var(--salmon3);color:#fff;text-decoration:none;padding:8px 12px;border-radius:8px;font-weight:800;white-space:nowrap;border:none;cursor:pointer;transition:all .3s}
+.banner button:hover{background:var(--salmon4);transform:translateY(-2px)}
+.banner .btn-eval{background:#f8b4a6}
+.banner .btn-eval:hover{background:#d6978aff}
+
+.card{background:var(--card);border:1px solid var(--borde);border-radius:16px;padding:18px;margin:16px 0;box-shadow:0 8px 22px rgba(0,0,0,.06)}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.sub{background:#fff;border:1px solid var(--borde);border-radius:12px;padding:16px;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
+.sub:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(0,0,0,.12)}
+.sub h3{margin:0 0 8px;font-size:18px;color:#b42b6f}
+.sub p{margin:0 0 12px;line-height:1.6;color:#555;flex-grow:1}
+.actions{margin-top:auto}
+.btn{display:inline-block;background:var(--salmon3);color:#fff;text-decoration:none;padding:10px 14px;border-radius:10px;font-weight:800;transition:all .3s}
+.btn:hover{background:var(--salmon4);transform:translateY(-2px)}
+.leccion-actions{display:flex;gap:8px;margin-bottom:16px;padding-bottom:12px;border-bottom:2px solid #f5cfd0}
+.btn-edit{background:var(--salmon3);border:none;cursor:pointer;padding:10px 14px;border-radius:10px;color:#fff;font-weight:800;transition:all .3s}
+.btn-edit:hover{background:var(--salmon4);transform:translateY(-2px)}
+.btn-delete{background:var(--salmon3);border:none;cursor:pointer;padding:10px 14px;border-radius:10px;color:#fff;font-weight:800;transition:all .3s}
+.btn-delete:hover{background:var(--salmon4);transform:translateY(-2px)}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="wrap">
+    <h1 class="title-mask " style="background-image:url('../uploads/lecciones/2/title.jpg')">
+      MAPA DE PÉRDIDAS TERRITORIALES DE BOLIVIA    </h1>
+  </div>
+</header>
+
+<div class="banner">
+  <div><strong> Gestión</strong> Administra tus contenidos</div>
+  <div style="display:flex;gap:8px">
+    <form method="POST" action="../crear_subtema.php" style="display:inline;margin:0">
+      <input type="hidden" name="id_leccion" value="2">
+      <button type="submit">+ Crear subtema</button>
+    </form>
+    <form method="POST" action="../crear_evaluacion.php" style="display:inline;margin:0">
+      <input type="hidden" name="id_leccion" value="2">
+      <button type="submit" class="btn-eval">Crear evaluación</button>
+    </form>
+  </div>
+</div>
+
+<main class="wrap">
+  <section class="card">
+        <div class="leccion-actions">
+      <button type="button" class="btn-edit" onclick="editarLeccion()"> Editar lección</button>
+      <button type="button" class="btn-delete" onclick="eliminarLeccion()"> Eliminar lección</button>
+    </div>
+        
+    <h2 style="margin:0 0 10px;color:#b42b6f"> Contenido general</h2>
+    <div>La historia señala que: Bolivia nació a la vida independiente con una extensión territorial de 2.363.769 km2 y que, a consecuencia de las guerras y tratados con los países vecinos, fue perdiendo territorio. Actualmente el Estado Plurinacional de Bolivia tiene una extensión territorial de 1.098.581 km2 .</div>
+  </section>
+
+  <section class="card">
+    <h2 style="margin:0 0 16px;color:#b42b6f"> Subtemas de la lección</h2>
+    <div class="grid">
+              <article class="sub">
+          <h3> Subtema 1: MAPA DE PÉRDIDAS TERRITORIALES</h3>
+          <p>Este mapa muestra los cambios territoriales de Bolivia entre 1825 y 1938. Fue publicado a lo largo del siglo XX para su …</p>
+          <div class="actions">
+            <a class="btn" href="leccion-2-s1.html">Ver más ▶</a>
+          </div>
+        </article>
+              <article class="sub">
+          <h3> Subtema 2: PÉRDIDA TERRITORIAL CON PERÚ – TRATADO INTERNACIONAL</h3>
+          <p>En 1902, no se hallaron acuerdo de límites entre Perú y Bolivia, por lo que ambos países apelaron al arbitraje de Argent…</p>
+          <div class="actions">
+            <a class="btn" href="leccion-2-s2.html">Ver más ▶</a>
+          </div>
+        </article>
+              <article class="sub">
+          <h3> Subtema 3: PÉRDIDA TERRITORIAL CON ARGENTINA – TRATADO INTERNACIONAL</h3>
+          <p>En el año 1889, Bolivia fue derrotada por Chile en la Guerra del Pacífico y perdió casi toda continuidad territorial con…</p>
+          <div class="actions">
+            <a class="btn" href="leccion-2-s3.html">Ver más ▶</a>
+          </div>
+        </article>
+              <article class="sub">
+          <h3> Subtema 4: PÉRDIDA TERRITORIAL CON BRASIL – TRATADO INTERNACIONAL</h3>
+          <p>En 1867, la primera pérdida fue por un obsequio que hizo el expresidente boliviano Mariano Melgarejo, quien entregó a Br…</p>
+          <div class="actions">
+            <a class="btn" href="leccion-2-s4.html">Ver más ▶</a>
+          </div>
+        </article>
+              <article class="sub">
+          <h3> Subtema 5: PÉRDIDA TERRITORIAL CON PARAGUAY – GUERRA DEL CHACO</h3>
+          <p>Entre 1932 y 1935 las repúblicas de Bolivia y Paraguay atravesaron una guerra de tres años, insensata, inhumana, cruenta…</p>
+          <div class="actions">
+            <a class="btn" href="leccion-2-s5.html">Ver más ▶</a>
+          </div>
+        </article>
+              <article class="sub">
+          <h3> Subtema 6: PÉRDIDA TERRITORIAL CON CHILE – GUERRA DEL PACÍFICO</h3>
+          <p>Al nacer Bolivia en 1825, su territorio se extendía hasta el océano Pacífico. Por medio del pacto de suspensión de 1884,…</p>
+          <div class="actions">
+            <a class="btn" href="leccion-2-s6.html">Ver más ▶</a>
+          </div>
+        </article>
+          </div>
+  </section>
+</main>
+
+<script>
+function editarLeccion() {
+  Swal.fire({
+    title: 'Editar Lección',
+    text: '¿Deseas modificar esta lección?',
+    icon: 'question',
+    showCancelButton: true,
+    confirmButtonColor: '#f6a89e',
+    cancelButtonColor: '#ddd',
+    confirmButtonText: 'Sí, editar',
+    cancelButtonText: 'Cancelar'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      const form = document.createElement('form');
+      form.method = 'POST';
+      form.action = '../editar_leccion.php';
+      form.innerHTML = '<input type="hidden" name="id_leccion" value="2">';
+      document.body.appendChild(form);
+      form.submit();
+    }
+  });
+}
+
+function eliminarLeccion() {
+  Swal.fire({
+    title: '¿Eliminar Lección?',
+    html: '<p>Se eliminará toda la lección y sus subtemas</p><p><strong>Esta acción no se puede deshacer</strong></p>',
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#f6a89e',
+    cancelButtonColor: '#ddd',
+    confirmButtonText: 'Sí, eliminar',
+    cancelButtonText: 'Cancelar'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      const form = document.createElement('form');
+      form.method = 'POST';
+      form.action = '../borrar_leccion.php';
+      form.innerHTML = '<input type="hidden" name="id_leccion" value="2"><input type="hidden" name="confirmar" value="si">';
+      document.body.appendChild(form);
+      form.submit();
+    }
+  });
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LA GUERRA DEL CHACO</title>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<style>
+:root{
+  --salmon1:#fde2dc; --salmon2:#f8b4a6; --salmon3:#f6a89e; --salmon4:#f28b6b;
+  --card:#fff; --text:#333; --borde:#f5cfd0;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Segoe UI,Arial,sans-serif;color:var(--text);background:linear-gradient(180deg,var(--salmon1) 0%,#fff 100%)}
+.wrap{max-width:980px;margin:0 auto;padding:0 14px}
+
+.header{padding:36px 0;background:linear-gradient(135deg,#ffd7cc,#ffe7e2);border-bottom:6px solid #ffc9bd;box-shadow:0 8px 24px rgba(0,0,0,.08)}
+.title-mask{margin:0;line-height:1.1;font-weight:900;font-size:clamp(30px,6vw,64px);text-align:center;color:transparent;-webkit-text-fill-color:transparent;background-repeat:no-repeat;background-position:center;background-size:cover;-webkit-background-clip:text;background-clip:text}
+.no-img{background-image:linear-gradient(90deg,#f6a89e 0%, #f8b4a6 100%)}
+
+.banner{background:#fff;border:1px solid var(--borde);border-left:4px solid var(--salmon3);padding:10px 12px;border-radius:10px;margin:16px auto;display:flex;gap:10px;align-items:center;justify-content:space-between;max-width:980px;flex-wrap:wrap}
+.banner button{background:var(--salmon3);color:#fff;text-decoration:none;padding:8px 12px;border-radius:8px;font-weight:800;white-space:nowrap;border:none;cursor:pointer;transition:all .3s}
+.banner button:hover{background:var(--salmon4);transform:translateY(-2px)}
+.banner .btn-eval{background:#f8b4a6}
+.banner .btn-eval:hover{background:#d6978aff}
+
+.card{background:var(--card);border:1px solid var(--borde);border-radius:16px;padding:18px;margin:16px 0;box-shadow:0 8px 22px rgba(0,0,0,.06)}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.sub{background:#fff;border:1px solid var(--borde);border-radius:12px;padding:16px;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
+.sub:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(0,0,0,.12)}
+.sub h3{margin:0 0 8px;font-size:18px;color:#b42b6f}
+.sub p{margin:0 0 12px;line-height:1.6;color:#555;flex-grow:1}
+.actions{margin-top:auto}
+.btn{display:inline-block;background:var(--salmon3);color:#fff;text-decoration:none;padding:10px 14px;border-radius:10px;font-weight:800;transition:all .3s}
+.btn:hover{background:var(--salmon4);transform:translateY(-2px)}
+.leccion-actions{display:flex;gap:8px;margin-bottom:16px;padding-bottom:12px;border-bottom:2px solid #f5cfd0}
+.btn-edit{background:var(--salmon3);border:none;cursor:pointer;padding:10px 14px;border-radius:10px;color:#fff;font-weight:800;transition:all .3s}
+.btn-edit:hover{background:var(--salmon4);transform:translateY(-2px)}
+.btn-delete{background:var(--salmon3);border:none;cursor:pointer;padding:10px 14px;border-radius:10px;color:#fff;font-weight:800;transition:all .3s}
+.btn-delete:hover{background:var(--salmon4);transform:translateY(-2px)}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="wrap">
+    <h1 class="title-mask " style="background-image:url('../uploads/lecciones/4/title.jpg')">
+      LA GUERRA DEL CHACO    </h1>
+  </div>
+</header>
+
+<div class="banner">
+  <div><strong> Gestión</strong> Administra tus contenidos</div>
+  <div style="display:flex;gap:8px">
+    <form method="POST" action="../crear_subtema.php" style="display:inline;margin:0">
+      <input type="hidden" name="id_leccion" value="4">
+      <button type="submit">+ Crear subtema</button>
+    </form>
+    <form method="POST" action="../crear_evaluacion.php" style="display:inline;margin:0">
+      <input type="hidden" name="id_leccion" value="4">
+      <button type="submit" class="btn-eval">Crear evaluación</button>
+    </form>
+  </div>
+</div>
+
+<main class="wrap">
+  <section class="card">
+        <div class="leccion-actions">
+      <button type="button" class="btn-edit" onclick="editarLeccion()"> Editar lección</button>
+      <button type="button" class="btn-delete" onclick="eliminarLeccion()"> Eliminar lección</button>
+    </div>
+        
+    <h2 style="margin:0 0 10px;color:#b42b6f"> Contenido general</h2>
+    <div>La Guerra del Chaco fue un conflicto bélico entre Bolivia y Paraguay (1932-1935) por el control de la región del Gran Chaco. Las causas principales fueron la disputa territorial, la creencia boliviana de que el Chaco contenía reservas de petróleo y la posibilidad de obtener una salida al Atlántico a través del río Paraguay. Aunque Bolivia era superior en población y recursos, Paraguay prevaleció en la guerra, que finalizó con la firma de un protocolo de paz en 1935 y un tratado de límites en 1938, otorgando a Paraguay la mayor parte del territorio en disputa.</div>
+  </section>
+
+  <section class="card">
+    <h2 style="margin:0 0 16px;color:#b42b6f"> Subtemas de la lección</h2>
+    <div class="grid">
+              <article class="sub">
+          <h3> Subtema 1: CAUSAS DEL CONFLICTO</h3>
+          <p>Disputas territoriales: Ambos países reclamaban el Chaco Boreal basándose en títulos coloniales heredados y la falta de …</p>
+          <div class="actions">
+            <a class="btn" href="leccion-4-s1.html">Ver más ▶</a>
+          </div>
+        </article>
+              <article class="sub">
+          <h3> Subtema 2: DESARROLLO DEL CONFLICTO</h3>
+          <p>Inicio: El conflicto se desencadenó tras una serie de incidentes fronterizos y la ocupación paraguaya del fortín bolivia…</p>
+          <div class="actions">
+            <a class="btn" href="leccion-4-s2.html">Ver más ▶</a>
+          </div>
+        </article>
+              <article class="sub">
+          <h3> Subtema 3: CONSECUENCIAS Y SOLUCIÓN</h3>
+          <p>Armisticio y Paz: Se firmó un armisticio en junio de 1935, y el tratado de paz definitivo se firmó en julio de 1938 en B…</p>
+          <div class="actions">
+            <a class="btn" href="leccion-4-s3.html">Ver más ▶</a>
+          </div>
+        </article>
+          </div>
+  </section>
+</main>
+
+<script>
+function editarLeccion() {
+  Swal.fire({
+    title: 'Editar Lección',
+    text: '¿Deseas modificar esta lección?',
+    icon: 'question',
+    showCancelButton: true,
+    confirmButtonColor: '#f6a89e',
+    cancelButtonColor: '#ddd',
+    confirmButtonText: 'Sí, editar',
+    cancelButtonText: 'Cancelar'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      const form = document.createElement('form');
+      form.method = 'POST';
+      form.action = '../editar_leccion.php';
+      form.innerHTML = '<input type="hidden" name="id_leccion" value="4">';
+      document.body.appendChild(form);
+      form.submit();
+    }
+  });
+}
+
+function eliminarLeccion() {
+  Swal.fire({
+    title: '¿Eliminar Lección?',
+    html: '<p>Se eliminará toda la lección y sus subtemas</p><p><strong>Esta acción no se puede deshacer</strong></p>',
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#f6a89e',
+    cancelButtonColor: '#ddd',
+    confirmButtonText: 'Sí, eliminar',
+    cancelButtonText: 'Cancelar'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      const form = document.createElement('form');
+      form.method = 'POST';
+      form.action = '../borrar_leccion.php';
+      form.innerHTML = '<input type="hidden" name="id_leccion" value="4"><input type="hidden" name="confirmar" value="si">';
+      document.body.appendChild(form);
+      form.submit();
+    }
+  });
+}
+</script>
+
+</body>
+</html>
